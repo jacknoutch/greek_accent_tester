@@ -67,7 +67,7 @@ words["δεσπότης"]["exceptions"].append({
 
 # Handle long vowels
 for word in words.values():
-    if word["nom_sg"] in ["τιμή", "νική"]:
+    if word["nom_sg"] in ["τιμή", "νίκη"]:
         word["long_vowels"].append(1)
     if word["nom_sg"] in ["πολιτεία"]:
         word["long_vowels"].append(2)

@@ -278,7 +278,8 @@
   nom_sg: νίκη
   gen_sg: νίκης
   gender: ἡ
-  long_vowels: []
+  long_vowels:
+  - 1
   paradigm: 1a
   gloss: victory
   exceptions: []
