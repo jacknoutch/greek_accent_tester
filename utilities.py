@@ -102,3 +102,12 @@ load_random_noun = lambda nouns: random.choice(nouns)
 load_random_case = lambda: random.choice([case for case in Case if case.name != "ALL"])
 
 load_random_number = lambda: random.choice([Number.SG, Number.PL])
+
+
+def clean_input():
+    """
+    Clean the user input by stripping whitespace and converting oxiai to tonoi.
+    """
+    input_str = input().strip()
+    accent_map = str.maketrans({"ά":"ά","έ":"έ","ί":"ί","ό":"ό","ύ":"ύ","ώ":"ώ","ή":"ή",})
+    return input_str.translate(accent_map)

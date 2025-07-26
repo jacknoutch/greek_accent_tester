@@ -18,7 +18,7 @@ if __name__ == "__main__":
         unaccented_form = strip_length(accented_form)
 
         print(f"Type the accented form of the noun '{unaccented_form}' in {case.name} {number.name}:")
-        user_input = input().strip()
+        user_input = clean_input()
 
         if user_input == accented_form:
             print("Correct!")
