@@ -11,8 +11,8 @@ from greek_normalisation.normalise import Normaliser
 
 # Local imports
 sys.path.append("/home/jacknoutch/projects/greek_accentuation/greek_accentuation")
-from greek_accentuation.characters import *
-from greek_accentuation.accentuation import *
+from greek_accentuation.characters import strip_length, strip_accents
+from greek_accentuation.accentuation import persistent
 
 normalise = Normaliser().normalise
 
@@ -210,7 +210,8 @@ class Noun(Word):
 
     def get_stem(self):
         """
-        Returns the stem of the noun, which is the form without any endings.
+        Returns the stem of the noun, which is unaccented, marked with macrons where appropriate, and without any 
+        endings.
         """
         if self.paradigm is None:
             raise ValueError("Paradigm not set for this noun.")
@@ -224,39 +225,41 @@ class Noun(Word):
         return unaccented_lemma[:-len(nom_sg_ending)]
     
 
-    def decline(self, number=None, case=None, normalised=False):
+    def decline(self, number=None, case=None):
         """
-        Returns the declined form of the noun based on the number and case.
+        Returns the declined word form for a given number and case, or None if no such word form exists in the paradigm.
 
-        If number or case is not provided, it will decline the whole paradigm for the given case.
+        If number or case is not provided, it will give all word forms in the paradigm.
         """
+
         if self.paradigm is None:
-            raise ValueError("Padadigm not set for this noun.")
+            raise ValueError("Paradigm not set for this noun.")
 
         if self.stem is None:
             raise ValueError("Stem not set for this noun.")
 
+
         if number is None or case is None:
+            # Return all forms in the paradigm
+            return {n: {c: self.decline(n, c) for c in self.paradigm[n]} for n in self.paradigm.keys()}
 
-            return {n: {c: self.decline(n, c, normalised) for c in self.paradigm[n]} for n in self.paradigm.keys()}
-
-        self.number = number
-        self.case = case
 
         ending = self.paradigm.get(number, None).get(case, None)
 
+        # Forms may be overridden where an Override exists in the place of a standard ending.
         if type(ending) is Override:
             return ending.word_form
 
+        # If the word's paradigm does not have the requested number or case, return None.
         try:
             declined_form = self.stem + ending
-        except TypeError as e:
-            print(f"NB: Declension for {self.paradigm['name']} does not have {number} {case}.")
+        except TypeError:
+            print(f"NB: Declension for {self.lemma} does not have {number} {case}.")
             return None
 
-        declined_form = self.stem + ending
+        accented_form = strip_length(persistent(declined_form, self.lemma))
 
-        return normalise(declined_form)[0] if normalised else declined_form
+        return accented_form
 
 
     def print_declension(self):
