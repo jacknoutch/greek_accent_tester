@@ -17,7 +17,7 @@ if __name__ == "__main__":
         accented_form = noun.decline(number, case)
         unaccented_form = strip_length(accented_form)
 
-        print(f"Type the accented form of the noun '{unaccented_form}' in {case.name} {number.name}:")
+        print(f"Type the accented form of the noun '{noun.lemma}' in {case.name} {number.name}:")
         user_input = clean_input()
 
         if user_input == accented_form:
