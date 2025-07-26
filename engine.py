@@ -194,10 +194,11 @@ class Noun(Word):
         self.case = None
         self.number = None
 
-        for override in overrides:
-            if isinstance(override, Override):
-                number, case = override.slot
-                self.paradigm[number][case] = override
+        if overrides:
+            for override in overrides:
+                if isinstance(override, Override):
+                    number, case = override.slot
+                    self.paradigm[number][case] = override
 
         if self.stem is None:
             self.stem = self.get_stem()
@@ -219,7 +220,6 @@ class Noun(Word):
             raise ValueError("Nominal singular ending not found in paradigm.")
         
         unaccented_lemma = strip_accents(self.lemma)
-        print(unaccented_lemma)
         
         return unaccented_lemma[:-len(nom_sg_ending)]
     
