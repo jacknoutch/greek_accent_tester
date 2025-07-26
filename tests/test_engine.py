@@ -25,10 +25,27 @@ class TestEngine(TestCase):
             Number.PL: {
                 Case.NOM: "νῖκαι",
                 Case.ACC: "νίκας",
-                Case.GEN: "νίκων",
+                Case.GEN: "νικῶν",
                 Case.DAT: "νίκαις",
             }
         })
+
+        time = Noun("τιμή", Gender.FEM, paradigm)
+        self.assertDictEqual(time.decline(), {
+            Number.SG: {
+                Case.NOM: "τιμή",
+                Case.ACC: "τιμήν",
+                Case.GEN: "τιμῆς",
+                Case.DAT: "τιμῇ",
+            },
+            Number.PL: {
+                Case.NOM: "τιμαί",
+                Case.ACC: "τιμάς",
+                Case.GEN: "τιμῶν",
+                Case.DAT: "τιμαῖς",
+            }
+        })
+
 
 
     def test_noun_decline_explicit_vocative(self):

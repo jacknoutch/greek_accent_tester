@@ -12,7 +12,8 @@ from greek_normalisation.normalise import Normaliser
 # Local imports
 from greek_accentuation.characters import strip_length, strip_accents, add_diacritic, Length
 from greek_accentuation.syllabify import syllabify, nucleus
-from greek_accentuation.accentuation import persistent
+from greek_accentuation.accentuation import Accentuation, get_accentuation, persistent
+from greek_accentuation.rules import Rule
 
 normalise = Normaliser().normalise
 
@@ -261,8 +262,10 @@ class Noun(Word):
             
             print(f"NB: Declension for {self.lemma} does not have {number} {case}.")
             return None
+        
+        exception_rules = self.get_exception_rules(number, case)
 
-        accented_form = strip_length(persistent(declined_form, self.lemma))
+        accented_form = strip_length(persistent(declined_form, self.lemma, exception_rule=exception_rules))
 
         return accented_form
 
@@ -297,3 +300,17 @@ class Noun(Word):
                     pp(f"  {case}: {ending}")
                 else:
                     pp(f"  {case}: No ending found")
+
+    def get_exception_rules(self, number, case):
+        """
+        Returns the exception rules for the given number and case.
+        """
+
+        accentuation = get_accentuation(self.lemma)
+        self.declension = 1
+
+        if self.declension == 1:
+            if accentuation == Accentuation.OXYTONE and case in {Case.GEN, Case.DAT}:
+                return Rule("First declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
+            elif number == Number.PL and case == Case.GEN:
+                return Rule("First declension nouns in genitive plural are perispomenon", Accentuation.PERISPOMENON)
