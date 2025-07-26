@@ -1,6 +1,12 @@
 # This file is auto-generated from the DCC Greek core vocabulary.
 # Currently the lexicon stores includes the first declension nouns.
 
+# long_vowels must be a list of integer values for the syllables in which an otherwise ambiguous vowel is long.
+# Short vowels are not listed. Nor are vowels which are always long. Nor are vowels in a nominal's ending.
+
+# Nouns in the first declension which have a separate vocative singular form in -η for 1e -ᾱ for 1f are not exceptions
+# (unless they have some other irregularity, e.g. δέσποτα being unusually paroxytone).
+
 ἀρχή:
   nom_sg: ἀρχή
   gen_sg: ἀρχῆς
@@ -285,4 +291,81 @@
   - 1
   paradigm: 1a
   gloss: victory
+  exceptions: []
+νεανίας:
+  nom_sg: νεανίας
+  gen_sg: νεανίου
+  gender: ὁ
+  long_vowels:
+  - 2
+  paradigm: 1f
+  gloss: youth
+  exceptions: []
+φυγή:
+  nom_sg: φυγή
+  gen_sg: φυγῆς
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1a
+  gloss: flight, escape
+  exceptions: []
+χώρα:
+  nom_sg: χώρα
+  gen_sg: χώρας
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: country, land
+  exceptions: []
+μοῦσα:
+  nom_sg: μοῦσα
+  gen_sg: μούσης
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1c
+  gloss: muse
+  exceptions: []
+διάνοια:
+  nom_sg: διάνοια
+  gen_sg: διανοίας
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1d
+  gloss: thought, idea
+  exceptions: []
+κριτής:
+  nom_sg: κριτής
+  gen_sg: κριτοῦ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: judge
+  exceptions:
+  - slot: sg_voc
+    word_form: κριτά
+Πέρσης:
+  nom_sg: Πέρσης
+  gen_sg: Πέρσου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: Persian
+  exceptions:
+  - slot: sg_voc
+    word_form: Πέρσα
+Ἀτρείδης:
+  nom_sg: Ἀτρείδης
+  gen_sg: Ἀτρείδου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: descendant of Atreus
+  exceptions: []
+Χανθίας:
+  nom_sg: Χανθίας
+  gen_sg: Χανθίου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1f
+  gloss: descendant of Χανθίς
   exceptions: []
