@@ -250,10 +250,16 @@ class Noun(Word):
         if type(ending) is Override:
             return ending.word_form
 
-        # If the word's paradigm does not have the requested number or case, return None.
         try:
             declined_form = self.stem + ending
+
+        # If the word's paradigm does not have the requested number or case, return None.
         except TypeError:
+
+            # But if the case requested is Vocative, use the nominative instead.
+            if case == Case.VOC:
+                return self.decline(number=number, case=Case.NOM)
+            
             print(f"NB: Declension for {self.lemma} does not have {number} {case}.")
             return None
 
