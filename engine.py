@@ -4,7 +4,7 @@
 
 # Standard library imports
 from pprint import pprint as pp
-import sys
+import enum, sys
 
 # Third party imports
 from greek_normalisation.normalise import Normaliser
@@ -16,13 +16,13 @@ from greek_accentuation.accentuation import persistent
 
 normalise = Normaliser().normalise
 
-class Gender:
+class Gender(enum.Enum):
     MASC = "m"
     FEM = "f"
     NEU = "n"
 
 
-class Case:
+class Case(enum.Enum):
     NOM = "nom"
     ACC = "acc"
     GEN = "gen"
@@ -30,23 +30,13 @@ class Case:
     VOC = "voc"
     ALL = [NOM, ACC, GEN, DAT, VOC]
 
-case_map = {
-    "nom": Case.NOM,
-    "acc": Case.ACC,
-    "gen": Case.GEN,
-    "dat": Case.DAT,
-    "voc": Case.VOC
-}
 
-class Number:
+class Number(enum.Enum):
     SG = "sg"
     PL = "pl"
-    ALL = [SG, PL]
+    DUAL = "dual"
+    ALL = [SG, PL, DUAL]
 
-number_map = {
-    "sg": Number.SG,
-    "pl": Number.PL
-}
 
 def get_paradigm(paradigm_id):
     """

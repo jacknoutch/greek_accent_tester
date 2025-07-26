@@ -1,4 +1,5 @@
 from unittest import TestCase, main
+from engine import *
 
 class TestUtilities(TestCase):
 
@@ -25,7 +26,7 @@ class TestUtilities(TestCase):
         processed = process_overrides(overrides_data)
 
         self.assertEqual(len(processed), 2)
-        self.assertEqual(processed[0].slot, ("sg", "voc"))
+        self.assertEqual(processed[0].slot, (Number.SG, Case.VOC))
         self.assertEqual(processed[0].word_form, "δέσποτα")
-        self.assertEqual(processed[1].slot, ("sg", "dat"))
+        self.assertEqual(processed[1].slot, (Number.SG, Case.DAT))
         self.assertEqual(processed[1].word_form, "Διί")

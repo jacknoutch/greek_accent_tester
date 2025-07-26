@@ -16,17 +16,17 @@ class TestEngine(TestCase):
         paradigm = get_paradigm("1a")
         nike = Noun("νίκη", Gender.FEM, paradigm, stem="νῑκ")
         self.assertDictEqual(nike.decline(), {
-            "sg": {
-                "nom": "νίκη",
-                "acc": "νίκην",
-                "gen": "νίκης",
-                "dat": "νίκῃ",
+            Number.SG: {
+                Case.NOM: "νίκη",
+                Case.ACC: "νίκην",
+                Case.GEN: "νίκης",
+                Case.DAT: "νίκῃ",
             },
-            "pl": {
-                "nom": "νῖκαι",
-                "acc": "νίκας",
-                "gen": "νίκων",
-                "dat": "νίκαις",
+            Number.PL: {
+                Case.NOM: "νῖκαι",
+                Case.ACC: "νίκας",
+                Case.GEN: "νίκων",
+                Case.DAT: "νίκαις",
             }
         })
 

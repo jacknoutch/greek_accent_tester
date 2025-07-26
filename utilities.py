@@ -66,7 +66,7 @@ def process_overrides(overrides_data):
     if overrides_data:
         for override in overrides_data:
             number, case = override['slot'].split('_')
-            case = case_map.get(case)
-            number = number_map.get(number)
+            case = Case(case)
+            number = Number(number)
             overrides.append(Override(override['word_form'], (number, case)))
     return overrides
