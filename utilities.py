@@ -1,5 +1,4 @@
-import string, sys
-sys.path.append("/home/jacknoutch/projects/greek_accentuation/greek_accentuation")
+import string
 from greek_accentuation.accentuation import *
 from engine import *
 

@@ -4,13 +4,12 @@
 
 # Standard library imports
 from pprint import pprint as pp
-import enum, sys
+import enum
 
 # Third party imports
 from greek_normalisation.normalise import Normaliser
 
 # Local imports
-sys.path.append("/home/jacknoutch/projects/greek_accentuation/greek_accentuation")
 from greek_accentuation.characters import strip_length, strip_accents
 from greek_accentuation.accentuation import persistent
 
