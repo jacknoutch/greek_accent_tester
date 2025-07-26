@@ -24,7 +24,7 @@ df = pd.read_csv(path, encoding="utf-8")
 # τιμή:
 #   nom_sg: "τιμή"
 #   gen_sg: "τιμῆς"
-#   long_vowels:
+#   long_vowels: # List of syllables with long vowels (only for ambiguous vowels α, ι, υ)
 #     - 1
 #   gender: "ἡ"
 #   paradigm: "1a"
