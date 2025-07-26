@@ -56,3 +56,17 @@ def get_first_decl_alpha_length(nom_sg):
         return "ᾰ"
     
     return "ᾱ"
+
+
+def process_overrides(overrides_data):
+    """
+    Process the overrides data to create Override objects.
+    """
+    overrides = []
+    if overrides_data:
+        for override in overrides_data:
+            number, case = override['slot'].split('_')
+            case = case_map.get(case)
+            number = number_map.get(number)
+            overrides.append(Override(override['word_form'], (number, case)))
+    return overrides
