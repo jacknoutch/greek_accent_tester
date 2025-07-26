@@ -1,4 +1,4 @@
-import string, yaml
+import random, string, yaml
 from greek_accentuation.accentuation import *
 from engine import *
 
@@ -95,3 +95,10 @@ def load_lexicon(data_path):
         nouns.append(noun)
 
     return nouns
+
+
+load_random_noun = lambda nouns: random.choice(nouns)
+
+load_random_case = lambda: random.choice([case for case in Case if case.name != "ALL"])
+
+load_random_number = lambda: random.choice([Number.SG, Number.PL])
