@@ -19,6 +19,7 @@ if __name__ == "__main__":
         noun = Noun(
             lemma=lemma,
             gender=data['gender'],
+            long_vowels=data.get('long_vowels', None),
             paradigm=paradigm,
             overrides=overrides,
         )

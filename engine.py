@@ -10,7 +10,8 @@ import enum
 from greek_normalisation.normalise import Normaliser
 
 # Local imports
-from greek_accentuation.characters import strip_length, strip_accents
+from greek_accentuation.characters import strip_length, strip_accents, add_diacritic, Length
+from greek_accentuation.syllabify import syllabify, nucleus
 from greek_accentuation.accentuation import persistent
 
 normalise = Normaliser().normalise
@@ -175,11 +176,12 @@ class Noun(Word):
     Words with the same form but different genders (e.g. ὁ θεός/ἡ θεός) are separate instances.
     """
 
-    def __init__(self, lemma, gender: Gender, paradigm, stem=None, overrides=None):
+    def __init__(self, lemma, gender: Gender, paradigm, long_vowels = None, stem=None, overrides=None):
         super().__init__(lemma)
-        self.stem = stem
         self.gender = gender
         self.paradigm = paradigm
+        self.long_vowels = long_vowels
+        self.stem = stem
         self.case = None
         self.number = None
 
@@ -210,7 +212,15 @@ class Noun(Word):
             raise ValueError("Nominal singular ending not found in paradigm.")
         
         unaccented_lemma = strip_accents(self.lemma)
-        
+
+        # If the lemma has a long vowel, we need to replace it with a macron.
+        if self.long_vowels:
+            syllables = syllabify(unaccented_lemma)
+            for i, syllable in enumerate(syllables):
+                if i + 1 in self.long_vowels:
+                    syllables[i] = add_diacritic(syllable, Length.LONG)
+            unaccented_lemma = ''.join(syllables)
+
         return unaccented_lemma[:-len(nom_sg_ending)]
     
 
