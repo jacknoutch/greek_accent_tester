@@ -1,4 +1,4 @@
-import string
+import string, yaml
 from greek_accentuation.accentuation import *
 from engine import *
 
@@ -69,3 +69,29 @@ def process_overrides(overrides_data):
             number = Number(number)
             overrides.append(Override(override['word_form'], (number, case)))
     return overrides
+
+
+def load_lexicon(data_path):
+    """
+    Load the lexicon from the specified YAML file.
+    """
+
+    # Load the DCC core Greek vocabulary from YAML
+    with open(data_path, "r", encoding="utf-8") as f:
+        dcc_core_vocab = yaml.safe_load(f)
+
+    # Create a list of Noun objects from the DCC core vocabulary
+    nouns = []
+    for lemma, data in dcc_core_vocab.items():
+        paradigm = get_paradigm(data['paradigm'])
+        overrides = process_overrides(data.get('exceptions', []))
+        noun = Noun(
+            lemma=lemma,
+            gender=data['gender'],
+            long_vowels=data.get('long_vowels', None),
+            paradigm=paradigm,
+            overrides=overrides,
+        )
+        nouns.append(noun)
+
+    return nouns
