@@ -11,11 +11,24 @@ class TestEngine(TestCase):
         self.assertEqual(nike.decline(number=Number.PL, case=Case.NOM), "νῖκαι")
 
 
-    # def test_noun_decline_no_such_msd(self):
-    #     # Test declining a noun with no such number or case
-    #     paradigm = get_paradigm("1a")
-    #     nike = Noun("νίκη", Gender.FEM, paradigm, stem="νῑκ")
-    #     self.assertIsNone(nike.decline(number=Number.PL, case=Case.GEN))
+    def test_noun_decline_full_paradigm(self):
+        # Test declining a noun with no such number or case > should result in a full paradigm
+        paradigm = get_paradigm("1a")
+        nike = Noun("νίκη", Gender.FEM, paradigm, stem="νῑκ")
+        self.assertDictEqual(nike.decline(), {
+            "sg": {
+                "nom": "νίκη",
+                "acc": "νίκην",
+                "gen": "νίκης",
+                "dat": "νίκῃ",
+            },
+            "pl": {
+                "nom": "νῖκαι",
+                "acc": "νίκας",
+                "gen": "νίκων",
+                "dat": "νίκαις",
+            }
+        })
 
 
     def test_noun_decline_explicit_vocative(self):
@@ -23,6 +36,7 @@ class TestEngine(TestCase):
         paradigm = get_paradigm("1f")
         nike = Noun("νεανίας", Gender.FEM, paradigm, stem="νεᾱνι")
         self.assertEqual(nike.decline(number=Number.SG, case=Case.VOC), "νεανία")
+
 
     def test_noun_decline_implied_vocative(self):
         # Test declining a noun with an implied vocative
