@@ -1,7 +1,7 @@
 # Convert the DCC data to YAML format
 
 import pandas as pd
-import string, sys, yaml
+import string, yaml
 
 from utilities import get_paradigm_from_principal_parts
 
@@ -10,6 +10,7 @@ path = "~/data/dcc/greek_core_vocabulary/greek-core-list.csv"
 df = pd.read_csv(path, encoding="utf-8")
 
 # The YAML structure is as follows:
+# 
 # δεσπότης:
 #   nom_sg: "δεσπότης"
 #   gen_sg: "δεσπότου"
@@ -19,6 +20,16 @@ df = pd.read_csv(path, encoding="utf-8")
 #   exceptions:
 #     - case: "vocative"
 #       form: "δεσπότα"
+
+# τιμή:
+#   nom_sg: "τιμή"
+#   gen_sg: "τιμῆς"
+#   long_vowels:
+#     - 1
+#   gender: "ἡ"
+#   paradigm: "1a"
+#   gloss: "honor, esteem; price, value; office, magistracy"
+#   exceptions: []
 
 # For now, only take the first declension nouns
 df = df[df['Part of Speech'] == "noun: 1st declension"].copy()
@@ -42,6 +53,7 @@ for row in df.itertuples():
         "nom_sg": lemma,
         "gen_sg": row.gen_sg,
         "gender": row.gender,
+        "long_vowels": [],
         "paradigm": row.paradigm,
         "gloss": row.DEFINITION,
         "exceptions": [],
@@ -52,6 +64,15 @@ words["δεσπότης"]["exceptions"].append({
     "slot": "sg_voc",
     "word_form": "δέσποτα"
 })
+
+# Handle long vowels
+for word in words.values():
+    if word["nom_sg"] in ["τιμή", "νική"]:
+        word["long_vowels"].append(1)
+    if word["nom_sg"] in ["πολιτεία"]:
+        word["long_vowels"].append(2)
+    if word["nom_sg"] in ["testing"]:
+        word["long_vowels"].append(3)
 
 # Save to YAML file
 with open("dcc_core_vocab.yaml", "w", encoding="utf-8") as f:
