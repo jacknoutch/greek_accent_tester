@@ -4,11 +4,15 @@
 
 # Standard library imports
 from pprint import pprint as pp
+import sys
 
 # Third party imports
+from greek_normalisation.normalise import Normaliser
+
+# Local imports
+sys.path.append("/home/jacknoutch/projects/greek_accentuation/greek_accentuation")
 from greek_accentuation.characters import *
 from greek_accentuation.accentuation import *
-from greek_normalisation.normalise import Normaliser
 
 normalise = Normaliser().normalise
 
@@ -26,12 +30,23 @@ class Case:
     VOC = "voc"
     ALL = [NOM, ACC, GEN, DAT, VOC]
 
+case_map = {
+    "nom": Case.NOM,
+    "acc": Case.ACC,
+    "gen": Case.GEN,
+    "dat": Case.DAT,
+    "voc": Case.VOC
+}
 
 class Number:
     SG = "sg"
     PL = "pl"
     ALL = [SG, PL]
 
+number_map = {
+    "sg": Number.SG,
+    "pl": Number.PL
+}
 
 def get_paradigm(paradigm_id):
     """
@@ -151,8 +166,9 @@ class Override:
     This is used for cases where the standard paradigm does not apply, such as unique vocative.
     """
     
-    def __init__(self, word_form):
+    def __init__(self, word_form, slot):
         self.word_form = word_form
+        self.slot = slot  # e.g. (Number.SG, Case.VOC)
 
     def __repr__(self):
         return f"Override({self.word_form})"
@@ -170,7 +186,7 @@ class Noun(Word):
     Words with the same form but different genders (e.g. ὁ θεός/ἡ θεός) are separate instances.
     """
 
-    def __init__(self, lemma, gender: Gender, paradigm, stem=None, unique_voc=None):
+    def __init__(self, lemma, gender: Gender, paradigm, stem=None, overrides=None):
         super().__init__(lemma)
         self.stem = stem
         self.gender = gender
@@ -178,11 +194,13 @@ class Noun(Word):
         self.case = None
         self.number = None
 
+        for override in overrides:
+            if isinstance(override, Override):
+                number, case = override.slot
+                self.paradigm[number][case] = override
+
         if self.stem is None:
             self.stem = self.get_stem()
-
-        if unique_voc:
-            self.paradigm[Number.SG][Case.VOC] = Override(unique_voc)
 
 
     def __repr__(self):
@@ -200,7 +218,10 @@ class Noun(Word):
         if nom_sg_ending is None:
             raise ValueError("Nominal singular ending not found in paradigm.")
         
-        return self.lemma[:-len(nom_sg_ending)] if self.lemma else self.lemma
+        unaccented_lemma = strip_accents(self.lemma)
+        print(unaccented_lemma)
+        
+        return unaccented_lemma[:-len(nom_sg_ending)]
     
 
     def decline(self, number=None, case=None, normalised=False):
