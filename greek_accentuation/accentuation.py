@@ -178,8 +178,11 @@ def on_penult(w, default_short=False):
         return pre + add_accentuation(s, Accentuation.OXYTONE)
 
 
-def persistent(w, lemma, default_short=False):
+def persistent(w, lemma, default_short=False, exception_rule=None):
     w = w.replace("|", "")
+
+    if exception_rule:
+        return add_accentuation(syllabify(w), exception_rule.accentuation)
 
     accentuation = get_accentuation(lemma)
     if accentuation is None:
