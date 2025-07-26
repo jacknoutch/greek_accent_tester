@@ -1,0 +1,247 @@
+ἀρχή:
+  nom_sg: ἀρχή
+  gen_sg: ἀρχῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: beginning, origin; rule, empire, realm; magistracy
+  exceptions: []
+ἡμέρα:
+  nom_sg: ἡμέρα
+  gen_sg: ἡμέρας
+  gender: ἡ
+  paradigm: 1b
+  gloss: day
+  exceptions: []
+γῆ:
+  nom_sg: γῆ
+  gen_sg: γῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: earth
+  exceptions: []
+ψυχή:
+  nom_sg: ψυχή
+  gen_sg: ψυχῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: breath, life, soul
+  exceptions: []
+ἀνάγκη:
+  nom_sg: ἀνάγκη
+  gen_sg: ἀνάγκης
+  gender: ἡ
+  paradigm: 1a
+  gloss: necessity
+  exceptions: []
+χώρα:
+  nom_sg: χώρα
+  gen_sg: χώρας
+  gender: ἡ
+  paradigm: 1b
+  gloss: land; place
+  exceptions: []
+αἰτία:
+  nom_sg: αἰτία
+  gen_sg: αἰτίας
+  gender: ἡ
+  paradigm: 1b
+  gloss: cause, origin; charge, accusation
+  exceptions: []
+ἀρετή:
+  nom_sg: ἀρετή
+  gen_sg: ἀρετῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: goodness, excellence; virtue; valor, bravery
+  exceptions: []
+θάλασσα:
+  nom_sg: θάλασσα
+  gen_sg: θαλάσσης
+  gender: ἡ
+  paradigm: 1c
+  gloss: the sea
+  exceptions: []
+δόξα:
+  nom_sg: δόξα
+  gen_sg: δόξης
+  gender: ἡ
+  paradigm: 1c
+  gloss: opinion, judgment; reputation, honor, glory
+  exceptions: []
+κεφαλή:
+  nom_sg: κεφαλή
+  gen_sg: –ῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: head
+  exceptions: []
+οὐσία:
+  nom_sg: οὐσία
+  gen_sg: οὐσίας
+  gender: ἡ
+  paradigm: 1b
+  gloss: substance, property; essence
+  exceptions: []
+τροφή:
+  nom_sg: τροφή
+  gen_sg: τροφῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: nourishment, food
+  exceptions: []
+τέχνη:
+  nom_sg: τέχνη
+  gen_sg: τέχνης
+  gender: ἡ
+  paradigm: 1a
+  gloss: art, skill, craft
+  exceptions: []
+φωνή:
+  nom_sg: φωνή
+  gen_sg: φωνῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: sound, voice
+  exceptions: []
+ἡδονή:
+  nom_sg: ἡδονή
+  gen_sg: –ῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: pleasure, enjoyment
+  exceptions: []
+διαφορά:
+  nom_sg: διαφορά
+  gen_sg: –ᾶς
+  gender: ἡ
+  paradigm: 1b
+  gloss: difference, disagreement
+  exceptions: []
+τύχη:
+  nom_sg: τύχη
+  gen_sg: τύχης
+  gender: ἡ
+  paradigm: 1a
+  gloss: luck, fortune (good or bad), fate, chance
+  exceptions: []
+μάχη:
+  nom_sg: μάχη
+  gen_sg: μάχης
+  gender: ἡ
+  paradigm: 1a
+  gloss: battle
+  exceptions: []
+ἀλήθεια:
+  nom_sg: ἀλήθεια
+  gen_sg: ἀληθείας
+  gender: ἡ
+  paradigm: 1d
+  gloss: truth
+  exceptions: []
+δίκη:
+  nom_sg: δίκη
+  gen_sg: δίκης
+  gender: ἡ
+  paradigm: 1a
+  gloss: justice, lawsuit, trial, penalty
+  exceptions: []
+γνώμη:
+  nom_sg: γνώμη
+  gen_sg: γνώμης
+  gender: ἡ
+  paradigm: 1a
+  gloss: thought, intelligence, opinion, purpose
+  exceptions: []
+τιμή:
+  nom_sg: τιμή
+  gen_sg: τιμῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: honor, esteem; price, value; office, magistracy
+  exceptions: []
+οἰκία:
+  nom_sg: οἰκία
+  gen_sg: οἰκίας
+  gender: ἡ
+  paradigm: 1b
+  gloss: building, house, dwelling
+  exceptions: []
+ἐπιστήμη:
+  nom_sg: ἐπιστήμη
+  gen_sg: –ης
+  gender: ἡ
+  paradigm: 1a
+  gloss: knowledge, understanding, skill
+  exceptions: []
+βουλή:
+  nom_sg: βουλή
+  gen_sg: βουλῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: will, determination; counsel, piece of advice; council of elders
+  exceptions: []
+γραφή:
+  nom_sg: γραφή
+  gen_sg: γραφῆς
+  gender: ἡ
+  paradigm: 1a
+  gloss: a drawing, painting, writing; indictment
+  exceptions: []
+πολιτεία:
+  nom_sg: πολιτεία
+  gen_sg: –ας
+  gender: ἡ
+  paradigm: 1b
+  gloss: constitution, citizenship, republic
+  exceptions: []
+εἰρήνη:
+  nom_sg: εἰρήνη
+  gen_sg: εἰρήνης
+  gender: ἡ
+  paradigm: 1a
+  gloss: peace
+  exceptions: []
+σωτηρία:
+  nom_sg: σωτηρία
+  gen_sg: σωτηρίας
+  gender: ἡ
+  paradigm: 1b
+  gloss: safety, deliverance
+  exceptions: []
+γλῶσσα:
+  nom_sg: γλῶσσα
+  gen_sg: γλώσσης
+  gender: ἡ
+  paradigm: 1c
+  gloss: tongue; language
+  exceptions: []
+δεσπότης:
+  nom_sg: δεσπότης
+  gen_sg: –ου
+  gender: ὁ
+  paradigm: 1e
+  gloss: master (of the household); absolute ruler
+  exceptions:
+  - slot: sg_voc
+    word_form: δέσποτα
+στρατιά:
+  nom_sg: στρατιά
+  gen_sg: –ᾶς
+  gender: ἡ
+  paradigm: 1b
+  gloss: army
+  exceptions: []
+συμφορά:
+  nom_sg: συμφορά
+  gen_sg: –ᾶς
+  gender: ἡ
+  paradigm: 1b
+  gloss: event, circumstance, misfortune
+  exceptions: []
+νίκη:
+  nom_sg: νίκη
+  gen_sg: νίκης
+  gender: ἡ
+  paradigm: 1a
+  gloss: victory
+  exceptions: []
