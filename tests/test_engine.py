@@ -79,7 +79,7 @@ class TestEngine(TestCase):
         self.assertEqual(adelphos.decline(number=Number.SG, case=Case.VOC), "ἄδελφε")
 
 
-    def test_2a_contract_nouns(self):
+    def test_2b_contract_nouns(self):
         # Test declining a second declension contract noun
         nous = Noun("νοῦς", Gender.MASC, "2b", stem="ν")
         self.assertEqual(nous.decline(number=Number.SG, case=Case.NOM), "νοῦς")
@@ -91,6 +91,19 @@ class TestEngine(TestCase):
         self.assertEqual(nous.decline(number=Number.PL, case=Case.ACC), "νοῦς")
         self.assertEqual(nous.decline(number=Number.PL, case=Case.GEN), "νῶν")
         self.assertEqual(nous.decline(number=Number.PL, case=Case.DAT), "νοῖς")
+
+
+    def test_2c_neuter_nouns(self):
+        # Test declining a second declension neuter noun
+        doron = Noun("δῶρον", Gender.NEU, "2c")
+        self.assertEqual(doron.decline(number=Number.SG, case=Case.NOM), "δῶρον")
+        self.assertEqual(doron.decline(number=Number.SG, case=Case.ACC), "δῶρον")
+        self.assertEqual(doron.decline(number=Number.SG, case=Case.GEN), "δώρου")
+        self.assertEqual(doron.decline(number=Number.SG, case=Case.DAT), "δώρῳ")
+        self.assertEqual(doron.decline(number=Number.PL, case=Case.NOM), "δῶρα")
+        self.assertEqual(doron.decline(number=Number.PL, case=Case.ACC), "δῶρα")
+        self.assertEqual(doron.decline(number=Number.PL, case=Case.GEN), "δώρων")
+        self.assertEqual(doron.decline(number=Number.PL, case=Case.DAT), "δώροις")
 
 
     def test_noun_decline_explicit_vocative(self):

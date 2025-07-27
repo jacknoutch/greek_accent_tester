@@ -160,6 +160,20 @@ def get_paradigm(paradigm_id):
                 Case.DAT: "οις",
                 },
         },
+        "2c": { # e.g. δῶρον
+            Number.SG: {
+                Case.NOM: "ον",
+                Case.ACC: "ον",
+                Case.GEN: "ου",
+                Case.DAT: "ῳ",
+                },
+            Number.PL: {
+                Case.NOM: "α",
+                Case.ACC: "α",
+                Case.GEN: "ων",
+                Case.DAT: "οις",
+                },
+        },
     }
 
     if paradigm_id in paradigms:
