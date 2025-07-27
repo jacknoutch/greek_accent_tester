@@ -106,6 +106,19 @@ class TestEngine(TestCase):
         self.assertEqual(doron.decline(number=Number.PL, case=Case.DAT), "δώροις")
 
 
+    def test_2d_neuter_contract_nouns(self):
+        # Test declining a second declension neuter contract noun
+        ostoon = Noun("ὀστοῦν", Gender.NEU, "2d", stem="ὀστ")
+        self.assertEqual(ostoon.decline(number=Number.SG, case=Case.NOM), "ὀστοῦν")
+        self.assertEqual(ostoon.decline(number=Number.SG, case=Case.ACC), "ὀστοῦν")
+        self.assertEqual(ostoon.decline(number=Number.SG, case=Case.GEN), "ὀστοῦ")
+        self.assertEqual(ostoon.decline(number=Number.SG, case=Case.DAT), "ὀστῷ")
+        self.assertEqual(ostoon.decline(number=Number.PL, case=Case.NOM), "ὀστᾶ")
+        self.assertEqual(ostoon.decline(number=Number.PL, case=Case.ACC), "ὀστᾶ")
+        self.assertEqual(ostoon.decline(number=Number.PL, case=Case.GEN), "ὀστῶν")
+        self.assertEqual(ostoon.decline(number=Number.PL, case=Case.DAT), "ὀστοῖς")
+
+
     def test_noun_decline_explicit_vocative(self):
         # Test declining a noun with an explicit vocative form
         nike = Noun("νεανίας", Gender.FEM, "1f", stem="νεᾱνι")

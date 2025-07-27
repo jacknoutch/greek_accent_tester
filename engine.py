@@ -174,6 +174,20 @@ def get_paradigm(paradigm_id):
                 Case.DAT: "οις",
                 },
         },
+        "2d": { # e.g. ὀστοῦν
+            Number.SG: {
+                Case.NOM: "ουν",
+                Case.ACC: "ουν",
+                Case.GEN: "ου",
+                Case.DAT: "ῳ",
+                },
+            Number.PL: {
+                Case.NOM: "α",
+                Case.ACC: "α",
+                Case.GEN: "ων",
+                Case.DAT: "οις",
+                },
+        },
     }
 
     if paradigm_id in paradigms:
@@ -351,4 +365,5 @@ class Noun(Word):
         if self.declension == "2b":
             accentuation = get_accentuation(self.lemma)
             if accentuation == Accentuation.PERISPOMENON:
+                # This overrides the typical rule that the -οι ending in the nominative plural is short
                 return Rule("Second declension perispomenon contract nouns remain perispomenon", Accentuation.PERISPOMENON)
