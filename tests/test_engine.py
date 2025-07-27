@@ -6,15 +6,13 @@ class TestEngine(TestCase):
     def test_noun_decline(self):
         # Test the decline method of a Noun class
 
-        paradigm = get_paradigm("1a")
-        nike = Noun("νίκη", Gender.FEM, 1, paradigm, stem="νῑκ")
+        nike = Noun("νίκη", Gender.FEM, "1a", stem="νῑκ")
         self.assertEqual(nike.decline(number=Number.PL, case=Case.NOM), "νῖκαι")
 
 
     def test_noun_decline_full_paradigm(self):
         # Test declining a noun with no such number or case > should result in a full paradigm
-        paradigm = get_paradigm("1a")
-        nike = Noun("νίκη", Gender.FEM, 1, paradigm, stem="νῑκ")
+        nike = Noun("νίκη", Gender.FEM, "1a", stem="νῑκ")
         self.assertDictEqual(nike.decline(), {
             Number.SG: {
                 Case.NOM: "νίκη",
@@ -30,7 +28,7 @@ class TestEngine(TestCase):
             }
         })
 
-        time = Noun("τιμή", Gender.FEM, 1, paradigm)
+        time = Noun("τιμή", Gender.FEM, "1a",)
         self.assertDictEqual(time.decline(), {
             Number.SG: {
                 Case.NOM: "τιμή",
@@ -50,8 +48,7 @@ class TestEngine(TestCase):
     def test_noun_decline_second_declension(self):
 
         # Test declining a second declension noun
-        paradigm = get_paradigm("2a")
-        theos = Noun("θεός", Gender.MASC, 2, paradigm)
+        theos = Noun("θεός", Gender.MASC, "2a",)
         self.assertEqual(theos.decline(number=Number.SG, case=Case.NOM), "θεός")
         self.assertEqual(theos.decline(number=Number.SG, case=Case.ACC), "θεόν")
         self.assertEqual(theos.decline(number=Number.SG, case=Case.GEN), "θεοῦ")
@@ -63,9 +60,9 @@ class TestEngine(TestCase):
 
         # Test declining a second declension paroxytone noun
         # NB this also tests the rule for short -οι in the nominative plural
-        paradigm = get_paradigm("2a")
-        polos = Noun("πῶλος", Gender.MASC, 2, paradigm)
+        polos = Noun("πῶλος", Gender.MASC, "2a",)
         self.assertEqual(polos.decline(number=Number.SG, case=Case.NOM), "πῶλος")
+        self.assertEqual(polos.decline(number=Number.SG, case=Case.VOC), "πῶλε")
         self.assertEqual(polos.decline(number=Number.SG, case=Case.ACC), "πῶλον")
         self.assertEqual(polos.decline(number=Number.SG, case=Case.GEN), "πώλου")
         self.assertEqual(polos.decline(number=Number.SG, case=Case.DAT), "πώλῳ")
@@ -77,23 +74,34 @@ class TestEngine(TestCase):
 
     def test_attic_vocative_adelphos(self):
         # Test the irregulare vocative singular form for ἀδελφός in Attic Greek
-        paradigm = get_paradigm("2a")
         override = Override("ἄδελφε", (Number.SG, Case.VOC))
-        adelphos = Noun("ἀδελφός", Gender.MASC, 1, paradigm, overrides=[override])
+        adelphos = Noun("ἀδελφός", Gender.MASC, "2a", overrides=[override])
         self.assertEqual(adelphos.decline(number=Number.SG, case=Case.VOC), "ἄδελφε")
+
+
+    def test_2a_contract_nouns(self):
+        # Test declining a second declension contract noun
+        nous = Noun("νοῦς", Gender.MASC, "2b", stem="ν")
+        self.assertEqual(nous.decline(number=Number.SG, case=Case.NOM), "νοῦς")
+        self.assertEqual(nous.decline(number=Number.SG, case=Case.VOC), "νοῦ")
+        self.assertEqual(nous.decline(number=Number.SG, case=Case.ACC), "νοῦν")
+        self.assertEqual(nous.decline(number=Number.SG, case=Case.GEN), "νοῦ")
+        self.assertEqual(nous.decline(number=Number.SG, case=Case.DAT), "νῷ")
+        self.assertEqual(nous.decline(number=Number.PL, case=Case.NOM), "νοῖ")
+        self.assertEqual(nous.decline(number=Number.PL, case=Case.ACC), "νοῦς")
+        self.assertEqual(nous.decline(number=Number.PL, case=Case.GEN), "νῶν")
+        self.assertEqual(nous.decline(number=Number.PL, case=Case.DAT), "νοῖς")
 
 
     def test_noun_decline_explicit_vocative(self):
         # Test declining a noun with an explicit vocative form
-        paradigm = get_paradigm("1f")
-        nike = Noun("νεανίας", Gender.FEM, 1, paradigm, stem="νεᾱνι")
+        nike = Noun("νεανίας", Gender.FEM, "1f", stem="νεᾱνι")
         self.assertEqual(nike.decline(number=Number.SG, case=Case.VOC), "νεανία")
 
 
     def test_noun_decline_implied_vocative(self):
         # Test declining a noun with an implied vocative
         # Some nouns do not have an explicit vocative form, but the nominative is used instead.
-        paradigm = get_paradigm("1a")
-        nike = Noun("νίκη", Gender.FEM, 1, paradigm, stem="νῑκ")
+        nike = Noun("νίκη", Gender.FEM, "1a", stem="νῑκ")
         self.assertEqual(nike.decline(number=Number.SG, case=Case.VOC), "νίκη")
         self.assertEqual(nike.decline(number=Number.PL, case=Case.VOC), "νῖκαι")

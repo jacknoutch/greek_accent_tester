@@ -374,8 +374,24 @@
   gen_sg: ἀδελφοῦ
   gender: ὁ
   long_vowels: []
-  paradigm: 1e
+  paradigm: 2a
   gloss: brother
   exceptions:
   - slot: sg_voc
     word_form: ἄδελφε
+δοῦλος:
+  nom_sg: δοῦλος
+  gen_sg: δούλου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: slave
+  exceptions: []
+νοῦς:
+  nom_sg: νοῦς
+  gen_sg: νοῦ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: mind, intellect
+  exceptions: []

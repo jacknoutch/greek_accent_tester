@@ -83,14 +83,13 @@ def load_lexicon(data_path):
     # Create a list of Noun objects from the DCC core vocabulary
     nouns = []
     for lemma, data in dcc_core_vocab.items():
-        paradigm = get_paradigm(data['paradigm'])
+        declension = data['paradigm']
         overrides = process_overrides(data.get('exceptions', []))
         noun = Noun(
             lemma=lemma,
             gender=data['gender'],
-            declension=int(data['paradigm'][0]),  # Assuming the first character indicates declension
+            declension=declension,
             long_vowels=data.get('long_vowels', None),
-            paradigm=paradigm,
             overrides=overrides,
         )
         nouns.append(noun)

@@ -145,7 +145,23 @@ def get_paradigm(paradigm_id):
                 Case.DAT: "οις",
                 },
         },
+        "2b": { # e.g. νοῦς
+            Number.SG: {
+                Case.NOM: "ους",
+                Case.ACC: "ουν",
+                Case.GEN: "ου",
+                Case.DAT: "ῳ",
+                Case.VOC: "ου",
+                },
+            Number.PL: {
+                Case.NOM: "οι",
+                Case.ACC: "ους",
+                Case.GEN: "ων",
+                Case.DAT: "οις",
+                },
+        },
     }
+
     if paradigm_id in paradigms:
         return paradigms[paradigm_id]
     else:
@@ -177,11 +193,11 @@ class Noun(Word):
     Words with the same form but different genders (e.g. ὁ θεός/ἡ θεός) are separate instances.
     """
 
-    def __init__(self, lemma, gender: Gender, declension: int, paradigm, long_vowels=None, stem=None, overrides=None):
+    def __init__(self, lemma, gender: Gender, declension, long_vowels=None, stem=None, overrides=None):
         super().__init__(lemma)
         self.gender = gender
         self.declension = declension
-        self.paradigm = paradigm
+        self.paradigm = get_paradigm(declension)
         self.long_vowels = long_vowels
         self.stem = stem
         self.case = None
@@ -310,11 +326,15 @@ class Noun(Word):
 
         accentuation = get_accentuation(self.lemma)
 
-        if self.declension == 1:
+        if self.declension[0] == "1":
             if accentuation == Accentuation.OXYTONE and case in {Case.GEN, Case.DAT}:
                 return Rule("First declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
             elif number == Number.PL and case == Case.GEN:
                 return Rule("First declension nouns in genitive plural are perispomenon", Accentuation.PERISPOMENON)
-        if self.declension == 2:
+        if self.declension[0] == "2":
             if accentuation == Accentuation.OXYTONE and case in {Case.GEN, Case.DAT}:
                 return Rule("Second declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
+        if self.declension == "2b":
+            accentuation = get_accentuation(self.lemma)
+            if accentuation == Accentuation.PERISPOMENON:
+                return Rule("Second declension perispomenon contract nouns remain perispomenon", Accentuation.PERISPOMENON)
