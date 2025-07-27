@@ -88,6 +88,7 @@ def load_lexicon(data_path):
         noun = Noun(
             lemma=lemma,
             gender=data['gender'],
+            declension=int(data['paradigm'][0]),  # Assuming the first character indicates declension
             long_vowels=data.get('long_vowels', None),
             paradigm=paradigm,
             overrides=overrides,

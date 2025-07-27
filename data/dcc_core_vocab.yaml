@@ -369,3 +369,13 @@
   paradigm: 1f
   gloss: descendant of Χανθίς
   exceptions: []
+ἀδελφός:
+  nom_sg: ἀδελφός
+  gen_sg: ἀδελφοῦ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: brother
+  exceptions:
+  - slot: sg_voc
+    word_form: ἄδελφε

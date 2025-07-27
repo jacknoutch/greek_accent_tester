@@ -115,7 +115,7 @@ def get_paradigm(paradigm_id):
                 Case.DAT: "αις",
                 },
         },
-        "1f": {  # e.g. νεᾱνίᾱς
+        "1f": { # e.g. νεᾱνίᾱς
             Number.SG: {
                 Case.NOM: "ᾱς",
                 Case.VOC: "ᾱ",
@@ -130,8 +130,8 @@ def get_paradigm(paradigm_id):
                 Case.DAT: "αις",
                 },
         },
-        "2a": {
-            Number.SG: { # e.g. λόγος
+        "2a": { # e.g. λόγος 
+            Number.SG: {
                 Case.NOM: "ος",
                 Case.ACC: "ον",
                 Case.GEN: "ου",
@@ -177,9 +177,10 @@ class Noun(Word):
     Words with the same form but different genders (e.g. ὁ θεός/ἡ θεός) are separate instances.
     """
 
-    def __init__(self, lemma, gender: Gender, paradigm, long_vowels = None, stem=None, overrides=None):
+    def __init__(self, lemma, gender: Gender, declension: int, paradigm, long_vowels=None, stem=None, overrides=None):
         super().__init__(lemma)
         self.gender = gender
+        self.declension = declension
         self.paradigm = paradigm
         self.long_vowels = long_vowels
         self.stem = stem
@@ -301,16 +302,19 @@ class Noun(Word):
                 else:
                     pp(f"  {case}: No ending found")
 
+
     def get_exception_rules(self, number, case):
         """
         Returns the exception rules for the given number and case.
         """
 
         accentuation = get_accentuation(self.lemma)
-        self.declension = 1
 
         if self.declension == 1:
             if accentuation == Accentuation.OXYTONE and case in {Case.GEN, Case.DAT}:
                 return Rule("First declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
             elif number == Number.PL and case == Case.GEN:
                 return Rule("First declension nouns in genitive plural are perispomenon", Accentuation.PERISPOMENON)
+        if self.declension == 2:
+            if accentuation == Accentuation.OXYTONE and case in {Case.GEN, Case.DAT}:
+                return Rule("Second declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
