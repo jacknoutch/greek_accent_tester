@@ -137,8 +137,8 @@ class TestEngine(TestCase):
         self.assertEqual(meneleos.decline(number=Number.SG, case=Case.NOM), "Μενέλεως")
         self.assertEqual(meneleos.decline(number=Number.SG, case=Case.VOC), "Μενέλεως")
         self.assertEqual(meneleos.decline(number=Number.SG, case=Case.ACC), "Μενέλεων")
-        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.GEN), "Μενέλεω")
-        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.DAT), "Μενέλεῳ")
+        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.GEN), "Μενέλεω")
+        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.DAT), "Μενέλεῳ")
 
     def test_noun_decline_explicit_vocative(self):
         # Test declining a noun with an explicit vocative form

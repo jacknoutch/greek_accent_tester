@@ -382,3 +382,7 @@ class Noun(Word):
             if accentuation == Accentuation.PERISPOMENON:
                 # This overrides the typical rule that the -οι ending in the nominative plural is short
                 return Rule("Second declension perispomenon contract nouns remain perispomenon", Accentuation.PERISPOMENON)
+        if self.declension == "2e":
+            accentuation = get_accentuation(self.lemma)
+            if accentuation == Accentuation.PROPAROXYTONE:
+                return Rule("Attic second declension nouns do not obey the law of limitation", accentuation)
