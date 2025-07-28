@@ -132,6 +132,13 @@ class TestEngine(TestCase):
         self.assertEqual(neos.decline(number=Number.PL, case=Case.GEN), "νεών")
         self.assertEqual(neos.decline(number=Number.PL, case=Case.DAT), "νεῴς")
 
+        # a proparoxytone Attic, which is an exception to the law of limitation
+        meneleos = Noun("Μενέλεως", Gender.MASC, "2e")
+        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.NOM), "Μενέλεως")
+        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.VOC), "Μενέλεως")
+        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.ACC), "Μενέλεων")
+        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.GEN), "Μενέλεω")
+        self.assertEqual(meneleos.decline(number=Number.SG, case=Case.DAT), "Μενέλεῳ")
 
     def test_noun_decline_explicit_vocative(self):
         # Test declining a noun with an explicit vocative form
