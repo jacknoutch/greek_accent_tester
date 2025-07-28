@@ -119,6 +119,20 @@ class TestEngine(TestCase):
         self.assertEqual(ostoon.decline(number=Number.PL, case=Case.DAT), "ὀστοῖς")
 
 
+    def test_2e_attic_nouns(self):
+        # Test declining a second declension Attic noun
+        neos = Noun("νεώς", Gender.MASC, "2e")
+        self.assertEqual(neos.decline(number=Number.SG, case=Case.NOM), "νεώς")
+        self.assertEqual(neos.decline(number=Number.SG, case=Case.VOC), "νεώς")
+        self.assertEqual(neos.decline(number=Number.SG, case=Case.ACC), "νεών")
+        self.assertEqual(neos.decline(number=Number.SG, case=Case.GEN), "νεώ")
+        self.assertEqual(neos.decline(number=Number.SG, case=Case.DAT), "νεῴ")
+        self.assertEqual(neos.decline(number=Number.PL, case=Case.NOM), "νεῴ")
+        self.assertEqual(neos.decline(number=Number.PL, case=Case.ACC), "νεώς")
+        self.assertEqual(neos.decline(number=Number.PL, case=Case.GEN), "νεών")
+        self.assertEqual(neos.decline(number=Number.PL, case=Case.DAT), "νεῴς")
+
+
     def test_noun_decline_explicit_vocative(self):
         # Test declining a noun with an explicit vocative form
         nike = Noun("νεανίας", Gender.FEM, "1f", stem="νεᾱνι")

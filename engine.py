@@ -189,6 +189,20 @@ def get_paradigm(paradigm_id):
                 Case.DAT: "οις",
                 },
         },
+        "2e": { # e.g. νεώς
+            Number.SG: {
+                Case.NOM: "ως",
+                Case.ACC: "ων",
+                Case.GEN: "ω",
+                Case.DAT: "ῳ",
+                },
+            Number.PL: {
+                Case.NOM: "ῳ",
+                Case.ACC: "ως",
+                Case.GEN: "ων",
+                Case.DAT: "ῳς",
+                },
+        }
     }
 
     if paradigm_id in paradigms:
@@ -360,7 +374,7 @@ class Noun(Word):
                 return Rule("First declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
             elif number == Number.PL and case == Case.GEN:
                 return Rule("First declension nouns in genitive plural are perispomenon", Accentuation.PERISPOMENON)
-        if self.declension[0] == "2":
+        if self.declension in ["2a", "2b", "2c", "2d"]:
             if accentuation == Accentuation.OXYTONE and case in {Case.GEN, Case.DAT}:
                 return Rule("Second declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
         if self.declension == "2b":
