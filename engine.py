@@ -230,6 +230,59 @@ class Word:
         pass
 
 
+class DefiniteArtcle(Word):
+    """
+    Represents the definite article in Ancient Greek.
+    """
+
+    def __init__(self):
+        super().__init__("ὁ")
+        self.paradigm = {
+            Gender.MASC: {
+                Number.SG: {
+                    Case.NOM: "ὁ",
+                    Case.ACC: "τόν",
+                    Case.GEN: "τοῦ",
+                    Case.DAT: "τῷ",
+                },
+                Number.PL: {
+                    Case.NOM: "οἱ",
+                    Case.ACC: "τούς",
+                    Case.GEN: "τῶν",
+                    Case.DAT: "τοῖς",
+                }
+            },
+            Gender.FEM: {
+                Number.SG: {
+                    Case.NOM: "ἡ",
+                    Case.ACC: "τήν",
+                    Case.GEN: "τῆς",
+                    Case.DAT: "τῇ",
+                },
+                Number.PL: {
+                    Case.NOM: "αἱ",
+                    Case.ACC: "τάς",
+                    Case.GEN: "τῶν",
+                    Case.DAT: "ταῖς",
+                }
+            },
+            Gender.NEU: {
+                Number.SG: {
+                    Case.NOM: "τό",
+                    Case.ACC: "τό",
+                    Case.GEN: "τοῦ",
+                    Case.DAT: "τῷ",
+                },
+                Number.PL: {
+                    Case.NOM: "τά",
+                    Case.ACC: "τά",
+                    Case.GEN: "τῶν",
+                    Case.DAT: "τοῖς",
+                }
+            },
+        }
+
+
 class Noun(Word):
     """
     Each Noun must have one gender.
