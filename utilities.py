@@ -83,7 +83,6 @@ def get_paradigm_from_principal_parts(principal_parts):
     return None
 
 
-
 def get_first_decl_alpha_length(nom_sg):
     """First declension nouns ending in -α are 1d when the nom.sg. is proparoxytone or properispomenon."""
 
@@ -142,10 +141,68 @@ load_random_case = lambda: random.choice([case for case in Case if case.name != 
 load_random_number = lambda: random.choice([Number.SG, Number.PL])
 
 
-def clean_input():
+def clean_input(prompt=""):
     """
     Clean the user input by stripping whitespace and converting oxiai to tonoi.
     """
-    input_str = input().strip()
+    input_str = input(prompt).strip()
     accent_map = str.maketrans({"ά":"ά","έ":"έ","ί":"ί","ό":"ό","ύ":"ύ","ώ":"ώ","ή":"ή",})
     return input_str.translate(accent_map)
+
+
+class Exercise:
+    """
+    Represents an exercise with a title, description, and a list of questions.
+    """
+    def __init__(self, id, title, description, questions):
+        self.id = id
+        self.title = title
+        self.description = description
+        self.questions = questions
+
+
+class Question:
+    """
+    Represents a question in an exercise with a prompt and an answer.
+    """
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+
+
+def load_exercises(yaml_file):
+    """
+    Load an exercise from a YAML file.
+    """
+    with open(yaml_file, "r", encoding="utf-8") as f:
+        exercise_data = yaml.safe_load(f)["exercises"]
+
+    
+    # A sample exercise data structure might look like this:
+    # 
+    # exercises:
+    # - id: definite_article
+    #     title: Definite Article
+    #     description: |
+    #     This exercise focusses on the definite article, all genders, cases, and numbers.
+    #     questions:
+    #     - prompt: της
+    #         answer: τῆς
+    #     - prompt: τα
+    #         answer: τά
+
+    exercises = []
+    for exercise in exercise_data:
+        # Create Exercise object
+        exercise = Exercise(
+            id=exercise['id'],
+            title=exercise['title'],
+            description=exercise['description'],
+            questions=[
+                Question(prompt=q['prompt'], answer=q['answer'])
+                for q in exercise['questions']
+            ]
+        )
+        exercises.append(exercise)
+    
+    return exercises

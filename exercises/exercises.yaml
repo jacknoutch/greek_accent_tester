@@ -1,0 +1,127 @@
+# This file containts the data for the excercises
+# It lists the rules to be learned, appropriate vocabulary and, where necessary, word forms for testing these rules.
+# It also lists 
+# Difficulty?
+# Prerequisites?
+
+exercises:
+  - id: definite_article
+    title: The Definite Article
+    description: |
+      This exercise focusses on the definite article, all genders, cases, and numbers.
+    questions:
+      - prompt: της
+        answer: τῆς
+      - prompt: τα
+        answer: τά
+      - prompt: των
+        answer: τῶν
+      - prompt: τον
+        answer: τόν
+      - prompt: την
+        answer: τἠν
+      - prompt: ταις
+        answer: ταῖς
+      - prompt: το
+        answer: τό
+      - prompt: του
+        answer: τοῦ
+      - prompt: τοιν
+        answer: τοῖν
+      - prompt: τοις
+        answer: τοῖς
+      - prompt: τῳ
+        answer: τῷ
+      - prompt: τω
+        answer: τώ
+      - prompt: τους
+        answer: τούς
+      - prompt: τῃ
+        answer: τῇ
+      - prompt: τας
+        answer: τάς
+  - id: first_declension
+    title: The First Declension
+    description: |
+      This exercise focusses on the first declension.
+    questions:
+      - prompt: της αἰσχυνης
+        answer: τῆς αἰσχύνης
+      - prompt: αἱ ἀγοραι
+        answer: αἱ ἀγοραί
+      - prompt: ταις πυλαις
+        answer: ταῖς πύλαις
+      - prompt: των νεανιων
+        answer: τῶν νεανιῶν
+      - prompt: του δικαστου
+        answer: τοῦ δικαστοῦ
+      - prompt: αἱ της ἐπιστημης πηγαι
+        answer: αἱ τῆς ἐπιστἠμης πηγαί
+      - prompt: την βασιλειαν
+        answer: τὴν βασίλειαν
+      - prompt: τῃ ἡδονῃ
+        answer: τῇ ἡδονῇ
+      - prompt: τῃ της ἀδικιας αἰτιᾳ
+        answer: τῇ τῆς ἀδικίας αἰτίᾳ
+      - prompt: των εὐεργετων
+        answer: τῶν εὐεργετῶν
+      - prompt: ὠ πολιτα
+        answer: ὦ πολῖτα
+      - prompt: τοις λῃσταις
+        answer: τοῖς λῃσταῖς
+      - prompt: ὠ Περσα
+        answer: ὦ Πέρσα
+      - prompt: τοιν θυραιν
+        answer: τοῖν θύραιν
+      - prompt: χαιρομεν τῃ ἐλευθεριᾳ.
+        answer: χαίρομεν τῇ ἐλευθερίᾳ.
+      - prompt: διωκουσι τους κλεπτας.
+        answer: διώκουσι τοὺς κλέπτας.
+      - prompt: οἱ Σπαρτιαται τους στρατιωτας φθειρουσιν.
+        answer: οἱ Σπαρτιᾶται τούς στρατιώτας φθείρουσιν.
+      - prompt: αἱ συκαι
+        answer: αἱ συκαῖ
+      - prompt: τὴν τῶν στρατιῶν βίαν.
+        answer: τὴν τῶν στρατιῶν βίαν.
+      - prompt: ταις πηγαις
+        answer: ταῖς πηγαῖς
+      - prompt: τῃ ἀρχῃ
+        answer: τῇ ἀρχῇ
+      - prompt: ὠ στρατιωτα
+        answer: ὦ στρατιῶτα
+      - prompt: τας Πλαταιας ἐφυλαξαν.
+        answer: τὰς Πλαταιὰς ἐφύλαξαν.
+      - prompt: των μαθητων
+        answer: τῶν μαθητῶν
+      - prompt: τῃ σκιᾳ
+        answer: τῇ σκιᾷ
+      - prompt: ὠ Ἀλκιβιαδη
+        answer: ὦ Ἀλκβιώδη
+      - prompt: τω οἰκια
+        answer: τὼ οἰκία
+      - prompt: τας μνας
+        answer: τὰς μνᾶς
+      - prompt: οἱ Ἑρμαι
+        answer: οἱ Ἑρμαῖ
+      - prompt: την των τοξοτων δοξαν
+        answer: τὴν τῶν τοξοτῶν δόξαν
+      - prompt: οἱ των Ἀθηνων ὁπλιται
+        answer: oἱ τῶν Ἀθηνῶν ὁπλῖται
+      - prompt: τῃ των ναυτων ἡττῃ
+        answer: τῇ τῶν ναυτῶν ἥττῃ
+      - prompt: ὠ ὁπλιτα
+        answer: ὦ ὁπλῖτα
+      - prompt: ταις συκαις
+        answer: ταῖς συκαῖς
+      - prompt: αἱ της οἰκιας θυραι
+        answer: αἱ τῆς οἰκίας θύραι
+      - prompt: ταις φυλακαις
+        answer: ταῖς φυλακαῖς
+      - prompt: την του δικαστου δικαιοσυνην ἐθαυμαζομεν.
+        answer: τὴν τοῦ δικαστοῦ δικαιοσύνην ἐθαυμώζομεν.
+      - prompt: αἱ της στρατιας νικαι τοις πολιταις τιμην ἐφερον.
+        answer: αἱ τῆς στρατιᾶς νῖκαι τοῖς πολίταις τιμὴν ἔφερον.
+      - prompt: οἱ δικασται την των λῃστων ἀδικιαν κολαζουσιν.
+        answer: οἱ δικασταὶ τὴν τῶν λῃστῶν ἀδικίαν κολώζουσιν.
+      - prompt: οἱ στρατιωται τας Θερμοπυλας πεφυλαχασιν.
+        answer: οἱ στρατιῶται τὰς Θερμοπύλας πεφυλώχασιν.
