@@ -427,6 +427,12 @@ class Noun(Word):
                 return Rule("First declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
             elif number == Number.PL and case == Case.GEN:
                 return Rule("First declension nouns in genitive plural are perispomenon", Accentuation.PERISPOMENON)
+        if self.declension == "1a" \
+            and accentuation == Accentuation.PERISPOMENON \
+            and case == Case.NOM \
+            and number == Number.PL:
+            # Perispomenon first declension nouns keep their accent throughout the whole paradigm
+            return Rule("First declension perispomenon nouns in nominative plural are always perispomenon", Accentuation.PERISPOMENON)
         if self.declension in ["2a", "2b", "2c", "2d"]:
             if accentuation == Accentuation.OXYTONE and case in {Case.GEN, Case.DAT}:
                 return Rule("Second declension oxytone nouns in genitive and dative are perispomenon", Accentuation.PERISPOMENON)
@@ -439,3 +445,4 @@ class Noun(Word):
             accentuation = get_accentuation(self.lemma)
             if accentuation == Accentuation.PROPAROXYTONE:
                 return Rule("Attic second declension nouns do not obey the law of limitation", accentuation)
+        

@@ -45,6 +45,24 @@ class TestEngine(TestCase):
         })
 
 
+    def test_contracted_vowel_first_declension(self):
+        suke = Noun("συκῆ", Gender.FEM, "1a")
+        self.assertDictEqual(suke.decline(), {
+            Number.SG: {
+                Case.NOM: "συκῆ",
+                Case.ACC: "συκῆν",
+                Case.GEN: "συκῆς",
+                Case.DAT: "συκῇ",
+            },
+            Number.PL: {
+                Case.NOM: "συκαῖ",
+                Case.ACC: "συκᾶς",
+                Case.GEN: "συκῶν",
+                Case.DAT: "συκαῖς",
+            }
+        })
+
+
     def test_noun_decline_second_declension(self):
 
         # Test declining a second declension noun
