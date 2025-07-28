@@ -46,82 +46,177 @@ exercises:
       This exercise focusses on the first declension.
     questions:
       - prompt: της αἰσχυνης
+        vocabulary:
+          αἰσχύνη
         answer: τῆς αἰσχύνης
       - prompt: αἱ ἀγοραι
+        vocabulary:
+          ἀγορά
         answer: αἱ ἀγοραί
       - prompt: ταις πυλαις
+        vocabulary: 
+          πύλη
         answer: ταῖς πύλαις
       - prompt: των νεανιων
+        vocabulary:
+          νεανίας
         answer: τῶν νεανιῶν
       - prompt: του δικαστου
+        vocabulary:
+          δικαστής
         answer: τοῦ δικαστοῦ
       - prompt: αἱ της ἐπιστημης πηγαι
+        vocabulary:
+          ἐπιστήμη
+          πηγή
         answer: αἱ τῆς ἐπιστἠμης πηγαί
       - prompt: την βασιλειαν
+        vocabulary:
+          βασίλεια
         answer: τὴν βασίλειαν
       - prompt: τῃ ἡδονῃ
+        vocabulary:
+          ἡδονή
         answer: τῇ ἡδονῇ
       - prompt: τῃ της ἀδικιας αἰτιᾳ
+        vocabulary:
+          ἀδικία
+          αἰτία
         answer: τῇ τῆς ἀδικίας αἰτίᾳ
       - prompt: των εὐεργετων
+        vocabulary:
+          εὐεργέτης
         answer: τῶν εὐεργετῶν
       - prompt: ὠ πολιτα
+        vocabulary:
+          πολίτης
         answer: ὦ πολῖτα
       - prompt: τοις λῃσταις
+        vocabulary:
+          λῃστής
         answer: τοῖς λῃσταῖς
       - prompt: ὠ Περσα
-        answer: ὦ Πέρσα
+        vocabulary:
+          Πέρσης
+        answer: ὦ Πέρσα
       - prompt: τοιν θυραιν
+        vocabulary:
+          θύρα
         answer: τοῖν θύραιν
       - prompt: χαιρομεν τῃ ἐλευθεριᾳ.
+        vocabulary:
+          ἐλευθερία
         answer: χαίρομεν τῇ ἐλευθερίᾳ.
       - prompt: διωκουσι τους κλεπτας.
+        vocabulary:
+          κλέπτης
         answer: διώκουσι τοὺς κλέπτας.
       - prompt: οἱ Σπαρτιαται τους στρατιωτας φθειρουσιν.
+        vocabulary:
+          Σπαρτιάτης
+          στρατιώτης
         answer: οἱ Σπαρτιᾶται τούς στρατιώτας φθείρουσιν.
       - prompt: αἱ συκαι
+        vocabulary:
+          συκῆ
         answer: αἱ συκαῖ
       - prompt: τὴν τῶν στρατιῶν βίαν.
+        vocabulary:
+          στρατιά
+          βία
         answer: τὴν τῶν στρατιῶν βίαν.
       - prompt: ταις πηγαις
+        vocabulary:
+          πηγή
         answer: ταῖς πηγαῖς
       - prompt: τῃ ἀρχῃ
+        vocabulary:
+          ἀρχή
         answer: τῇ ἀρχῇ
       - prompt: ὠ στρατιωτα
+        vocabulary:
+          στρατιώτης
         answer: ὦ στρατιῶτα
       - prompt: τας Πλαταιας ἐφυλαξαν.
+        vocabulary:
+          Πλαταιαί
         answer: τὰς Πλαταιὰς ἐφύλαξαν.
       - prompt: των μαθητων
+        vocabulary:
+          μαθητής
         answer: τῶν μαθητῶν
       - prompt: τῃ σκιᾳ
+        vocabulary:
+          σκιά
         answer: τῇ σκιᾷ
       - prompt: ὠ Ἀλκιβιαδη
-        answer: ὦ Ἀλκβιώδη
+        vocabulary:
+          Ἀλκβιάδης
+        answer: ὦ Ἀλκβιάδη
       - prompt: τω οἰκια
+        vocabulary:
+          οἰκία
         answer: τὼ οἰκία
       - prompt: τας μνας
+        vocabulary:
+          μνᾶ
         answer: τὰς μνᾶς
       - prompt: οἱ Ἑρμαι
+        vocabulary:
+          Ἑρμῆς
         answer: οἱ Ἑρμαῖ
       - prompt: την των τοξοτων δοξαν
+        vocabulary:
+          τοξότης
+          δόξα
         answer: τὴν τῶν τοξοτῶν δόξαν
       - prompt: οἱ των Ἀθηνων ὁπλιται
+        vocabulary:
+          Ἀθῆναι
+          ὁπλίτης
         answer: oἱ τῶν Ἀθηνῶν ὁπλῖται
       - prompt: τῃ των ναυτων ἡττῃ
+        vocabulary:
+          ναύτης
+          ἧττα
         answer: τῇ τῶν ναυτῶν ἥττῃ
       - prompt: ὠ ὁπλιτα
+        vocabulary:
+          ὁπλίτης
         answer: ὦ ὁπλῖτα
       - prompt: ταις συκαις
+        vocabulary:
+          συκῆ
         answer: ταῖς συκαῖς
       - prompt: αἱ της οἰκιας θυραι
+        vocabulary:
+          οἰκία
+          θύρα
         answer: αἱ τῆς οἰκίας θύραι
       - prompt: ταις φυλακαις
+        vocabulary: 
+          φυλακή
         answer: ταῖς φυλακαῖς
       - prompt: την του δικαστου δικαιοσυνην ἐθαυμαζομεν.
+        vocabulary:
+          δικαστής
+          δικαιοσύνη
         answer: τὴν τοῦ δικαστοῦ δικαιοσύνην ἐθαυμώζομεν.
       - prompt: αἱ της στρατιας νικαι τοις πολιταις τιμην ἐφερον.
+        vocabulary:
+          στρατιά
+          νίκη
+          πολίτης
+          τιμή
         answer: αἱ τῆς στρατιᾶς νῖκαι τοῖς πολίταις τιμὴν ἔφερον.
       - prompt: οἱ δικασται την των λῃστων ἀδικιαν κολαζουσιν.
+        vocabulary:
+          δικαστής
+          λῃστής
+          ἀδικία
         answer: οἱ δικασταὶ τὴν τῶν λῃστῶν ἀδικίαν κολώζουσιν.
       - prompt: οἱ στρατιωται τας Θερμοπυλας πεφυλαχασιν.
+        vocabulary:
+          στρατιώτης
+          Θερμοπύλαι
         answer: οἱ στρατιῶται τὰς Θερμοπύλας πεφυλώχασιν.
