@@ -7,17 +7,29 @@ from engine import *
 
 # Assume three parts to the principal parts, the nom.sg. form, the gen.sg form (probably shortened to just the ending), and the gender
 def get_paradigm_from_principal_parts(principal_parts):
-    nom_sg, gen_sg, article = principal_parts.split(" ")
+
+
+
+    try:
+        nom_sg, gen_sg, article = principal_parts.split(" ")
+    except ValueError:
+        raise ValueError("Principal parts must be in the format 'nom_sg gen_sg article': {}".format(principal_parts))
+    
     nom_sg = nom_sg.translate(str.maketrans('', '', string.punctuation))
     unaccented_nom_sg = strip_accents(nom_sg)
+    unaccented_gen_sg = strip_accents(gen_sg)
 
     article_to_gender = {
         "ἡ": Gender.FEM,
         "ὁ": Gender.MASC,
         "τό": Gender.NEU,
+        "ὁἡ": Gender.COM,
     }
 
-    gender = article_to_gender[article]
+    try:
+        gender = article_to_gender[article]
+    except KeyError:
+        raise ValueError("Unknown article for principal parts: {}".format(principal_parts)) 
 
     if gender == Gender.FEM:
         if unaccented_nom_sg.endswith("η"):
@@ -28,21 +40,30 @@ def get_paradigm_from_principal_parts(principal_parts):
                 return "1d"
             elif alpha_length == "ᾱ":
                 return "1b"
-            else:
-                raise ValueError("Unknown 1st declension noun ending")
         elif unaccented_nom_sg.endswith("α"):
             return "1c"
-        else:
-            raise ValueError("Unknown 1st declension noun ending")
+        elif unaccented_nom_sg.endswith("ος") and unaccented_gen_sg.endswith("ου"):
+            return "2a"
     elif gender == Gender.MASC:
         if unaccented_nom_sg.endswith("ης"):
             return "1e"
         elif unaccented_nom_sg.endswith("ας"):
             return "1f"
-        else:
-            raise ValueError("Unknown 1st declension masculine noun ending")
-    else:
-        raise ValueError("Unknown 1st declension noun ending")
+        elif unaccented_nom_sg.endswith("ος") and unaccented_gen_sg.endswith("ου"):
+            return "2a"
+        elif unaccented_nom_sg.endswith("ους") and unaccented_gen_sg.endswith("ου"):
+            return "2b"
+    elif gender == Gender.NEU:
+        if unaccented_nom_sg.endswith("ον") and unaccented_gen_sg.endswith("ου"):
+            return "2c"
+        elif unaccented_nom_sg.endswith("ους") and unaccented_gen_sg.endswith("ου"):
+            return "2d"
+    elif gender == Gender.COM:
+        if unaccented_nom_sg.endswith("ος") and unaccented_gen_sg.endswith("ου"):
+            return "2a"
+    
+    print(ValueError("Unknown declension for principal parts: {}".format(principal_parts)))
+    return None
 
 
 

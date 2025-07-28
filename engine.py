@@ -21,6 +21,7 @@ class Gender(enum.Enum):
     MASC = "m"
     FEM = "f"
     NEU = "n"
+    COM = "c"  # Common
 
 
 class Case(enum.Enum):
