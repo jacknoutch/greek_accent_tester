@@ -8,15 +8,30 @@ from engine import *
 # Assume three parts to the principal parts, the nom.sg. form, the gen.sg form (probably shortened to just the ending), and the gender
 def get_paradigm_from_principal_parts(principal_parts):
 
+    split_parts = principal_parts.split(" ")
+    clean_principal_parts = []
+    for i, part in enumerate(split_parts):
+        # Remove any commas or full stops from the parts
+        part = part.strip(".,")
+        if part:
+            clean_principal_parts.append(part)
 
 
-    try:
-        nom_sg, gen_sg, article = principal_parts.split(" ")
-    except ValueError:
-        raise ValueError("Principal parts must be in the format 'nom_sg gen_sg article': {}".format(principal_parts))
+    if len(clean_principal_parts) == 5:
+        # Check to see if the second and fourth parts are in parentheses, which is a common format for alternate forms
+        if clean_principal_parts[1].startswith("(") \
+            and clean_principal_parts[3].startswith("("):
+            # If so, we can assume the second part is the genitive singular and the fourth part is the article
+            clean_principal_parts = [clean_principal_parts[0], clean_principal_parts[2], clean_principal_parts[4]]
+
+    if len(clean_principal_parts) != 3:
+        raise ValueError("Principal parts must consist of three parts: nom_sg, gen_sg, and article. Provided: {}".format(principal_parts))
+
+    nom_sg, gen_sg, article = clean_principal_parts
     
     nom_sg = nom_sg.translate(str.maketrans('', '', string.punctuation))
     unaccented_nom_sg = strip_accents(nom_sg)
+    gen_sg = gen_sg.translate(str.maketrans('', '', string.punctuation))
     unaccented_gen_sg = strip_accents(gen_sg)
 
     article_to_gender = {
@@ -53,10 +68,12 @@ def get_paradigm_from_principal_parts(principal_parts):
             return "2a"
         elif unaccented_nom_sg.endswith("ους") and unaccented_gen_sg.endswith("ου"):
             return "2b"
+        elif unaccented_nom_sg.endswith("ως") and unaccented_gen_sg.endswith("ω"):
+            return "2e"
     elif gender == Gender.NEU:
         if unaccented_nom_sg.endswith("ον") and unaccented_gen_sg.endswith("ου"):
             return "2c"
-        elif unaccented_nom_sg.endswith("ους") and unaccented_gen_sg.endswith("ου"):
+        elif unaccented_nom_sg.endswith("ουν") and unaccented_gen_sg.endswith("ου"):
             return "2d"
     elif gender == Gender.COM:
         if unaccented_nom_sg.endswith("ος") and unaccented_gen_sg.endswith("ου"):
