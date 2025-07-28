@@ -399,7 +399,8 @@
   nom_sg: κύριος
   gen_sg: κυρίου,
   gender: ὁ
-  long_vowels: []
+  long_vowels:
+  - 1
   paradigm: 2a
   gloss: lord, master
   exceptions: []
@@ -536,7 +537,7 @@
 ἵππος:
   nom_sg: ἵππος
   gen_sg: ἵππου,
-  gender: ὁ
+  gender: ὁ/ἡ
   long_vowels: []
   paradigm: 2a
   gloss: horse
@@ -737,7 +738,8 @@
   nom_sg: θυμός
   gen_sg: θυμοῦ,
   gender: ὁ
-  long_vowels: []
+  long_vowels:
+  - 1
   paradigm: 2a
   gloss: life, spirit; soul, heart, mind
   exceptions: []
