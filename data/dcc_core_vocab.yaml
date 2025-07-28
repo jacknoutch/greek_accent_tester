@@ -384,7 +384,9 @@
   long_vowels: []
   paradigm: 2a
   gloss: god, goddess
-  exceptions: []
+  exceptions:
+  - slot: sg_voc
+    word_form: θεός
 ἄνθρωπος:
   nom_sg: ἄνθρωπος
   gen_sg: –ου,
@@ -771,3 +773,13 @@
   paradigm: 2d
   gloss: basket
   exceptions: []
+ἕως:
+  nom_sg: ἕως
+  gen_sg: ἕω
+  gender: ἡ
+  long_vowels: []
+  paradigm: 2e
+  gloss: dawn, daybreak
+  exceptions:
+  - slot: sg_acc
+    word_form: ἕω
