@@ -369,6 +369,158 @@
   paradigm: 1f
   gloss: descendant of Χανθίς
   exceptions: []
+  λόγος:
+  nom_sg: λόγος
+  gen_sg: λόγου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: word, speech, discourse; thought, reason, account
+  exceptions: []
+θεός:
+  nom_sg: θεός
+  gen_sg: θεοῦ,
+  gender: ὁ/ἡ
+  long_vowels: []
+  paradigm: 2a
+  gloss: god, goddess
+  exceptions: []
+ἄνθρωπος:
+  nom_sg: ἄνθρωπος
+  gen_sg: –ου,
+  gender: ὁ/ἡ
+  long_vowels: []
+  paradigm: 2a
+  gloss: human being
+  exceptions: []
+κύριος:
+  nom_sg: κύριος
+  gen_sg: κυρίου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: lord, master
+  exceptions: []
+χρόνος:
+  nom_sg: χρόνος
+  gen_sg: χρόνου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: time
+  exceptions: []
+τόπος:
+  nom_sg: τόπος
+  gen_sg: τόπου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: place; topic
+  exceptions: []
+υἱός:
+  nom_sg: υἱός
+  gen_sg: υἱοῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: son
+  exceptions: []
+τρόπος:
+  nom_sg: τρόπος
+  gen_sg: τρόπου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: way, manner, fashion; way of life, habit, custom
+  exceptions: []
+ἔργον:
+  nom_sg: ἔργον
+  gen_sg: ἔργου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: work, achievement, exploit
+  exceptions: []
+ζῷον:
+  nom_sg: ζῷον
+  gen_sg: ζῴου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: living being, animal
+  exceptions: []
+νόμος:
+  nom_sg: νόμος
+  gen_sg: νόμου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: custom, tradition, law
+  exceptions: []
+πόλεμος:
+  nom_sg: πόλεμος
+  gen_sg: πολέμου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: war
+  exceptions: []
+ἥλιος:
+  nom_sg: ἥλιος
+  gen_sg: ἡλίου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: sun
+  exceptions: []
+βίος:
+  nom_sg: βίος
+  gen_sg: βίου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: life
+  exceptions: []
+κύκλος:
+  nom_sg: κύκλος
+  gen_sg: κύκλου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: circle, ring, orb, disc, circular motion
+  exceptions: []
+ποταμός:
+  nom_sg: ποταμός
+  gen_sg: –οῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: river, stream
+  exceptions: []
+ἀριθμός:
+  nom_sg: ἀριθμός
+  gen_sg: –οῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: number
+  exceptions: []
+καιρός:
+  nom_sg: καιρός
+  gen_sg: καιροῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: the right time
+  exceptions: []
+σημεῖον:
+  nom_sg: σημεῖον
+  gen_sg: σημείου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: sign, signal, mark
+  exceptions: []
 ἀδελφός:
   nom_sg: ἀδελφός
   gen_sg: ἀδελφοῦ
@@ -379,19 +531,243 @@
   exceptions:
   - slot: sg_voc
     word_form: ἄδελφε
-δοῦλος:
-  nom_sg: δοῦλος
-  gen_sg: δούλου
+ἵππος:
+  nom_sg: ἵππος
+  gen_sg: ἵππου,
   gender: ὁ
   long_vowels: []
   paradigm: 2a
-  gloss: slave
+  gloss: horse
+  exceptions: []
+κόσμος:
+  nom_sg: κόσμος
+  gen_sg: κόσμου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: order; ornament, decoration, adornment; world, universe
+  exceptions: []
+θάνατος:
+  nom_sg: θάνατος
+  gen_sg: θανάτου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: death
+  exceptions: []
+ὁδός:
+  nom_sg: ὁδός
+  gen_sg: ὁδοῦ,
+  gender: ἡ
+  long_vowels: []
+  paradigm: 2a
+  gloss: road, way, path
   exceptions: []
 νοῦς:
   nom_sg: νοῦς
   gen_sg: νοῦ
   gender: ὁ
   long_vowels: []
+  paradigm: 2b
+  gloss: mind, perception, sense
+  exceptions: []
+δῆμος:
+  nom_sg: δῆμος
+  gen_sg: δήμου,
+  gender: ὁ
+  long_vowels: []
   paradigm: 2a
-  gloss: mind, intellect
+  gloss: the (common) people; country district (opp. πόλις)
+  exceptions: []
+οὐρανός:
+  nom_sg: οὐρανός
+  gen_sg: –οῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: sky, heaven
+  exceptions: []
+οἶκος:
+  nom_sg: οἶκος
+  gen_sg: οἴκου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: house, home, family
+  exceptions: []
+πρόσωπον:
+  nom_sg: πρόσωπον
+  gen_sg: προσώπου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: face, mask, person
+  exceptions: []
+ὀφθαλμός:
+  nom_sg: ὀφθαλμός
+  gen_sg: –οῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: eye
+  exceptions: []
+χωρίον:
+  nom_sg: χωρίον
+  gen_sg: χωρίου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: place, spot, district
+  exceptions: []
+νόσος:
+  nom_sg: νόσος
+  gen_sg: νόσου,
+  gender: ἡ
+  long_vowels: []
+  paradigm: 2a
+  gloss: disease, sickness
+  exceptions: []
+λίθος:
+  nom_sg: λίθος
+  gen_sg: λίθου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: stone
+  exceptions: []
+νεώς:
+  nom_sg: νεώς
+  gen_sg: νεώ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2e
+  gloss: temple
+  exceptions: []
+στρατηγός:
+  nom_sg: στρατηγός
+  gen_sg: –οῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: leader of an army, commander, general
+  exceptions: []
+λεώς:
+  nom_sg: λεώς
+  gen_sg: λεώ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2e
+  gloss: the people, folk
+  exceptions: []
+νῆσος:
+  nom_sg: νῆσος
+  gen_sg: νήσου,
+  gender: ἡ
+  long_vowels: []
+  paradigm: 2a
+  gloss: island
+  exceptions: []
+τέκνον:
+  nom_sg: τέκνον
+  gen_sg: τέκνου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: child
+  exceptions: []
+στρατιώτης:
+  nom_sg: στρατιώτης
+  gen_sg: –ου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: soldier
+  exceptions: []
+πόνος:
+  nom_sg: πόνος
+  gen_sg: πόνου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: work, labor; stress, trouble, pain
+  exceptions: []
+ξένος:
+  nom_sg: ξένος
+  gen_sg: ξένου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: guest-friend; foreigner, stranger
+  exceptions: []
+δοῦλος:
+  nom_sg: δοῦλος
+  gen_sg: δούλου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: slave
+  exceptions: []
+ὅπλον:
+  nom_sg: ὅπλον
+  gen_sg: ὅπλου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: weapon, tool, implement (mostly pl.)
+  exceptions: []
+ποιητής:
+  nom_sg: ποιητής
+  gen_sg: –οῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: creator, poet
+  exceptions: []
+κίνδυνος:
+  nom_sg: κίνδυνος
+  gen_sg: κινδύνου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: danger
+  exceptions: []
+θυμός:
+  nom_sg: θυμός
+  gen_sg: θυμοῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: life, spirit; soul, heart, mind
+  exceptions: []
+φόβος:
+  nom_sg: φόβος
+  gen_sg: φόβου,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: panic, fear, flight
+  exceptions: []
+στρατός:
+  nom_sg: στρατός
+  gen_sg: –οῦ,
+  gender: ὁ
+  long_vowels: []
+  paradigm: 2a
+  gloss: army
+  exceptions: []
+ἀργύριον:
+  nom_sg: ἀργύριον
+  gen_sg: ἀργυρίου,
+  gender: τό
+  long_vowels: []
+  paradigm: 2c
+  gloss: money
+  exceptions: []
+κανοῦν:
+  nom_sg: κανοῦν
+  gen_sg: κανοῦ
+  gender: τό
+  long_vowels: []
+  paradigm: 2d
+  gloss: basket
   exceptions: []

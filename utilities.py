@@ -38,7 +38,7 @@ def get_paradigm_from_principal_parts(principal_parts):
         "ἡ": Gender.FEM,
         "ὁ": Gender.MASC,
         "τό": Gender.NEU,
-        "ὁἡ": Gender.COM,
+        "ὁ/ἡ": Gender.COM,
     }
 
     try:
