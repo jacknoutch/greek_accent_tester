@@ -207,3 +207,19 @@ def load_exercises(yaml_file):
         exercises.append(exercise)
     
     return exercises
+
+
+def get_long_vowel_form(word):
+    """
+    Get the long vowel form of a word if it has long vowels.
+    """
+    if word.long_vowels:
+
+        syllables = syllabify(word.lemma)
+        for i, syllable in enumerate(syllables):
+            if i + 1 in word.long_vowels:
+                syllables[i] = add_diacritic(syllable, Length.LONG)
+        
+        return ''.join(syllables)
+
+    return word.lemma

@@ -7,7 +7,7 @@ EXERCISE_PATH = "./exercises/exercises.yaml"
 
 if __name__ == "__main__":
 
-    # nouns = load_lexicon(DATA_PATH)
+    nouns = load_lexicon(DATA_PATH)
 
     # while True:
         
@@ -42,9 +42,15 @@ if __name__ == "__main__":
     print(f"Exercise: {exercise.title}")
 
     for i, question in enumerate(exercise.questions):
-        print(f"{i + 1}: {question.prompt}\nVocabulary: {', '.join(question.vocabulary)}")
+        print(f"\n{i + 1}: {question.prompt}")
+        print(f"Vocabulary:")
+        for word in question.vocabulary:
+            # find the word in the lexicon
+            noun = next((n for n in nouns if n.lemma == word), None)
+            if noun:
+                print(f"- {noun.lemma}, {get_long_vowel_form(noun)}")
 
-        user_answer = clean_input("Your answer: ")
+        user_answer = clean_input("\nYour answer: ")
         if user_answer == question.answer:
             print("Correct!")
         else:
