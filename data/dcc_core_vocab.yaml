@@ -1,8 +1,17 @@
-# This file is auto-generated from the DCC Greek core vocabulary.
-# Currently the lexicon stores includes the first declension nouns.
+### INTRODUCTION ###
 
-# long_vowels must be a list of integer values for the syllables in which an otherwise ambiguous vowel is long.
-# Short vowels are not listed. Nor are vowels which are always long. Nor are vowels in a nominal's ending.
+# This file contains the program's lexicon, auto-generated from the DCC Greek core vocabulary, edited and added to
+# as required, and especially for the vocabulary required by the exercises.
+
+# Currently the lexicon stores includes the first and second declension nouns.
+
+### FORMAT ###
+
+# long_vowels is a list of integer values for the syllables in which an otherwise ambiguous vowel is long.
+# Short vowels are not listed. Nor are unambiguously long vowels (η, ω). Nor are vowels in a nominal's ending.
+
+# Exceptions are for irregular forms at a lexical level. Where a word is irregular but only one of a wider category,
+# it is dealt with elsewhere in the program.
 
 # Nouns in the first declension which have a separate vocative singular form in -η for 1e -ᾱ for 1f are not exceptions
 # (unless they have some other irregularity, e.g. δέσποτα being unusually paroxytone).
@@ -266,7 +275,7 @@
   gloss: master (of the household); absolute ruler
   exceptions:
   - slot: sg_voc
-    word_form: δέσποτα
+    word_form: δέσποτα
 στρατιά:
   nom_sg: στρατιά
   gen_sg: –ᾶς
@@ -292,7 +301,7 @@
   paradigm: 1a
   gloss: victory
   exceptions: []
-νεανίας:
+νεανίας:
   nom_sg: νεανίας
   gen_sg: νεανίου
   gender: ὁ
@@ -333,7 +342,7 @@
   paradigm: 1d
   gloss: thought, idea
   exceptions: []
-κριτής:
+κριτής:
   nom_sg: κριτής
   gen_sg: κριτοῦ
   gender: ὁ
@@ -342,8 +351,8 @@
   gloss: judge
   exceptions:
   - slot: sg_voc
-    word_form: κριτά
-Πέρσης:
+    word_form: κριτά
+Πέρσης:
   nom_sg: Πέρσης
   gen_sg: Πέρσου
   gender: ὁ
@@ -353,7 +362,7 @@
   exceptions:
   - slot: sg_voc
     word_form: Πέρσα
-Ἀτρείδης:
+Ἀτρείδης:
   nom_sg: Ἀτρείδης
   gen_sg: Ἀτρείδου
   gender: ὁ
@@ -361,7 +370,7 @@
   paradigm: 1e
   gloss: descendant of Atreus
   exceptions: []
-Χανθίας:
+Χανθίας:
   nom_sg: Χανθίας
   gen_sg: Χανθίου
   gender: ὁ
@@ -386,7 +395,7 @@
   gloss: god, goddess
   exceptions:
   - slot: sg_voc
-    word_form: θεός
+    word_form: θεός
 ἄνθρωπος:
   nom_sg: ἄνθρωπος
   gen_sg: –ου,
@@ -524,7 +533,7 @@
   paradigm: 2c
   gloss: sign, signal, mark
   exceptions: []
-ἀδελφός:
+ἀδελφός:
   nom_sg: ἀδελφός
   gen_sg: ἀδελφοῦ
   gender: ὁ
@@ -638,9 +647,9 @@
   paradigm: 2a
   gloss: stone
   exceptions: []
-νεώς:
+νεώς:
   nom_sg: νεώς
-  gen_sg: νεώ
+  gen_sg: νεώ
   gender: ὁ
   long_vowels: []
   paradigm: 2e
@@ -654,9 +663,9 @@
   paradigm: 2a
   gloss: leader of an army, commander, general
   exceptions: []
-λεώς:
-  nom_sg: λεώς
-  gen_sg: λεώ
+λεώς:
+  nom_sg: λεώς
+  gen_sg: λεώ
   gender: ὁ
   long_vowels: []
   paradigm: 2e
@@ -770,7 +779,7 @@
 κανοῦν:
   nom_sg: κανοῦν
   gen_sg: κανοῦ
-  gender: τό
+  gender: τό
   long_vowels: []
   paradigm: 2d
   gloss: basket
@@ -785,3 +794,243 @@
   exceptions:
   - slot: sg_acc
     word_form: ἕω
+ναύτης:
+  nom_sg: ναύτης
+  gen_sg: ναύτου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: sailor
+  exceptions: []
+μνᾶ:
+  nom_sg: μνᾶ
+  gen_sg: μνᾶς
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: mina
+  exceptions: []
+Σπαρτιάτης:
+  nom_sg: Σπαρτιάτης
+  gen_sg: Σπαρτιάτου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: Spartan
+  exceptions: []
+ἀδικία:
+  nom_sg: ἀδικία
+  gen_sg: ἀδικίας
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: injustice
+  exceptions: []
+λῃστής:
+  nom_sg: λῃστής
+  gen_sg: λῃστοῦ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: bandit
+  exceptions: []
+ἧττα:
+  nom_sg: ἧττα
+  gen_sg: ἧττης
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: defeat
+  exceptions: []
+Πλαταιαί:
+  nom_sg: Πλαταιαί
+  gen_sg: Πλαταιῶν
+  gender: αἱ
+  long_vowels: []
+  paradigm: 1e
+  gloss: Plataea
+  exceptions: []
+βία:
+  nom_sg: βία
+  gen_sg: βίας
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: force, strength
+  exceptions: []
+βασίλεια:
+  nom_sg: βασίλεια
+  gen_sg: βασιλείου
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: royalty, kingship
+  exceptions: []
+σκιά:
+  nom_sg: σκιά
+  gen_sg: σκιάς
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: shadow
+  exceptions: []
+ἐλευθερία:
+  nom_sg: ἐλευθερία
+  gen_sg: ἐλευθερίας
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: freedom
+  exceptions: []
+αἰσχύνη:
+  nom_sg: αἰσχύνη
+  gen_sg: αἰσχύνης
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1a
+  gloss: shame
+  exceptions: []
+Ἑρμῆς:
+  nom_sg: Ἑρμῆς
+  gen_sg: Ἑρμοῦ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: Hermes
+  exceptions: []
+δικαιοσύνηv:
+  nom_sg: δικαιοσύνη
+  gen_sg: δικαιοσύνης
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1a
+  gloss: justice
+  exceptions: []
+πύλη:
+  nom_sg: πύλη
+  gen_sg: πύλης
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1a
+  gloss: gate
+  exceptions: []
+πηγήv:
+  nom_sg: πηγή
+  gen_sg: πηγῆς
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1a
+  gloss: spring, source
+  exceptions: []
+ἀγορά:
+  nom_sg: ἀγορά
+  gen_sg: ἀγορᾶς
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: marketplace
+  exceptions: []
+πολίτης:
+  nom_sg: πολίτης
+  gen_sg: πολίτου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: citizen
+  exceptions: []
+δικαστής:
+  nom_sg: δικαστής
+  gen_sg: δικαστοῦ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: judge
+  exceptions: []
+Ἀθῆναι:
+  nom_sg: Ἀθῆναι
+  gen_sg: Ἀθηνῶν
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1e
+  gloss: Athens
+  exceptions: []
+ὁπλίτης:
+  nom_sg: ὁπλίτης
+  gen_sg: ὁπλίτου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: hoplite
+  exceptions: []
+κλέπτης:
+  nom_sg: κλέπτης
+  gen_sg: κλέπτου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: thief
+  exceptions: []
+τοξότης:
+  nom_sg: τοξότης
+  gen_sg: τοξότη
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: archer
+  exceptions: []
+Θερμοπύλαι:
+  nom_sg: Θερμοπύλαι
+  gen_sg: Θερμοπυλῶν
+  gender: αἱ
+  long_vowels: []
+  paradigm: 1e
+  gloss: Thermopylae
+  exceptions: []
+συκῆ:
+  nom_sg: συκῆ
+  gen_sg: συκῆς
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1a
+  gloss: fig tree
+  exceptions: []
+Ἀλκβιάδης:
+  nom_sg: Ἀλκβιάδης
+  gen_sg: Ἀλκβιάδου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: Alcibiades
+  exceptions: []
+θύρα:
+  nom_sg: θύρα
+  gen_sg: θύρας
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1b
+  gloss: door
+  exceptions: []
+εὐεργέτης:
+  nom_sg: εὐεργέτης
+  gen_sg: εὐεργέτου
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: benefactor
+  exceptions: []
+φυλακή:
+  nom_sg: φυλακή
+  gen_sg: φυλακῆς
+  gender: ἡ
+  long_vowels: []
+  paradigm: 1a
+  gloss: prison
+  exceptions: []
+μαθητής:
+  nom_sg: μαθητής
+  gen_sg: μαθητοῦ
+  gender: ὁ
+  long_vowels: []
+  paradigm: 1e
+  gloss: student
+  exceptions: []
