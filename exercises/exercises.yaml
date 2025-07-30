@@ -115,12 +115,12 @@ exercises:
         vocabulary:
           - Σπαρτιάτης
           - στρατιώτης
-        answer: οἱ Σπαρτιᾶται τούς στρατιώτας φθείρουσιν.
+        answer: οἱ Σπαρτιᾶται τοὺς στρατιώτας φθείρουσιν.
       - prompt: αἱ συκαι
         vocabulary:
           - συκῆ
         answer: αἱ συκαῖ
-      - prompt: τὴν τῶν στρατιῶν βίαν.
+      - prompt: την των στρατιων βιαν.
         vocabulary:
           - στρατιά
           - βία
@@ -151,8 +151,8 @@ exercises:
         answer: τῇ σκιᾷ
       - prompt: ὠ Ἀλκιβιαδη
         vocabulary:
-          - Ἀλκβιάδης
-        answer: ὦ Ἀλκβιάδη
+          - Ἀλκιβιάδης
+        answer: ὦ Ἀλκιβιάδη
       - prompt: τω οἰκια
         vocabulary:
           - οἰκία
