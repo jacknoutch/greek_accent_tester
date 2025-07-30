@@ -42,7 +42,7 @@ if __name__ == "__main__":
     print(f"Exercise: {exercise.title}")
 
     for i, question in enumerate(exercise.questions):
-        print(f"{i + 1}: {question.prompt}")
+        print(f"{i + 1}: {question.prompt}\nVocabulary: {', '.join(question.vocabulary)}")
 
         user_answer = clean_input("Your answer: ")
         if user_answer == question.answer:

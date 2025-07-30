@@ -165,9 +165,10 @@ class Question:
     """
     Represents a question in an exercise with a prompt and an answer.
     """
-    def __init__(self, prompt, answer):
+    def __init__(self, prompt, answer, vocabulary):
         self.prompt = prompt
         self.answer = answer
+        self.vocabulary = vocabulary
 
 
 def load_exercises(yaml_file):
@@ -199,7 +200,7 @@ def load_exercises(yaml_file):
             title=exercise['title'],
             description=exercise['description'],
             questions=[
-                Question(prompt=q['prompt'], answer=q['answer'])
+                Question(prompt=q['prompt'], answer=q['answer'], vocabulary=q.get('vocabulary', []))
                 for q in exercise['questions']
             ]
         )
