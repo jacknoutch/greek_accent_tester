@@ -69,7 +69,7 @@ exercises:
         vocabulary:
           - ἐπιστήμη
           - πηγή
-        answer: αἱ τῆς ἐπιστἠμης πηγαί
+        answer: αἱ τῆς ἐπιστήμης πηγαί
       - prompt: την βασιλειαν
         vocabulary:
           - βασίλεια
